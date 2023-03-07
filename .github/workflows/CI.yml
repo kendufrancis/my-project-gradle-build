@@ -32,7 +32,7 @@ jobs:
       with:
         arguments: build
     - name: Build and push Docker image
-      uses: mr-smithers-excellent/docker-build-push@v4
+      uses: docker/setup-buildx-action@v2
       with:
         image: naahnze/demo-app
         registry: docker.io
