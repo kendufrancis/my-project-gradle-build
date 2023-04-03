@@ -34,9 +34,11 @@ jobs:
     - name: Build and push Docker image
       uses: docker/setup-buildx-action@v2
       with:
-        image: naahnze01/demos
-        registry: docker.io
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-      
-      
+        context: .
+        push: true
+        tags: naahnze01/demos:java latest
+        platforms: linux/amd64
+        builder: my-builder
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
