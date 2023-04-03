@@ -39,4 +39,4 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
     - name: Push Docker image to naahnze01/demos repository
-      run: docker tag java naahnze01/demos && docker push naahnze01/demos
+      run: docker tag openjdk:8-jre-alpine naahnze01/demos:java
