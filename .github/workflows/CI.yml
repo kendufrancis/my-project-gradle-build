@@ -18,7 +18,6 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -28,7 +27,7 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     - name: Build with Gradle
-      uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+      uses: gradle/gradle-build-action@v2
       with:
         arguments: build
     - name: Login to Docker Hub
@@ -39,4 +38,6 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
     - name: Push Docker image to naahnze01/demos repository
-      run: docker tag openjdk:8-jre-alpine naahnze01/demos:java
+      run: |
+        docker tag openjdk:11-jre-alpine naahnze01/demos:java
+        docker push naahnze01/demos:java
