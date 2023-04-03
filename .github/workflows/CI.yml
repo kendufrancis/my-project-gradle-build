@@ -38,5 +38,6 @@ jobs:
       with:
         image: naahnze01/demos
         tags: java, latest
+        registry: docker.io
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKER_TOKEN }}
