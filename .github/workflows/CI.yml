@@ -49,6 +49,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: $ {{  secrets.DOCKERHUB_USERNAME }}/java
+          tags: $ {{  secrets.DOCKERHUB_USERNAME }}/java:1.0
 
        
